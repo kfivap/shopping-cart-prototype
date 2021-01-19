@@ -143,13 +143,12 @@ opt1_plus.addEventListener('click',function(){
   {
 document.getElementById('opt1_total').innerHTML=++option1_quantity
 opt1_arr.push(cart1)
-console.log(opt1_arr)
 
 total1=sum_array(opt1_arr)
-console.log(total1)
+
 
 spisok.push([1,label1, cart1])
-console.log(spisok)
+
 
 add_buy_list(spisok)
 
@@ -165,15 +164,14 @@ opt1_minus.addEventListener('click',function(){
 document.getElementById('opt1_total').innerHTML=--option1_quantity
 opt1_arr.pop(cart1)
 
-console.log(opt1_arr)
-console.log()
+
 
 
 total1=sum_array(opt1_arr)
-console.log(total1)
+
 
 spisok.splice(getLast(spisok,1), 1)
-console.log(spisok)
+
 
 add_buy_list(spisok)
 
@@ -267,14 +265,43 @@ function getMaxOfArray(numArray) {
 
 
 
-
+let array_buttons = []
 function add_buy_list(arr){
+  array_buttons=[]
+
   let count=0
   buy_list.innerHTML=''
   for(let i in arr){
-    buy_list.innerHTML+=`<li> ${++count} ${arr[i][1]} ${arr[i][2]} `}
+    buy_list.innerHTML+=`<span id='del${i}'><li>
+
+     ${++count} ${arr[i][1]} ${arr[i][2]} 
+     <button id="delete${i}">remove</button> </span>`
+     array_buttons.push('delete'+i)
+
+     add_listeners_delete_buttons()
+
+
+}
 
 
   }
 
 
+function add_listeners_delete_buttons(){
+for (let i in array_buttons){
+  document.getElementById(array_buttons[i]).addEventListener('click',
+    function(){console.log(spisok[i])
+
+    document.getElementById('del'+i).remove()
+    if(spisok[i][0]==1){
+      opt1_minus.click()
+    }
+    if(spisok[i][0]==2){
+opt2_minus.click()
+    }
+    })
+    update()
+
+  
+}
+}
