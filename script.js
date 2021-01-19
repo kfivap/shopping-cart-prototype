@@ -272,13 +272,18 @@ function add_buy_list(arr){
   let count=0
   buy_list.innerHTML=''
   for(let i in arr){
-    buy_list.innerHTML+=`<span id='del${i}'><li>
-
+    buy_list.innerHTML+=
+        `<span id='del${i}'><li>
      ${++count} ${arr[i][1]} ${arr[i][2]} 
-     <button id="delete${i}">remove</button> </span>`
-     array_buttons.push('delete'+i)
+      </span>`
+     
 
-     add_listeners_delete_buttons()
+ //   `<span id='del${i}'><li>
+   //  ${++count} ${arr[i][1]} ${arr[i][2]} 
+    // <button id="delete${i}">remove</button> </span>`
+   //  array_buttons.push('delete'+i)
+
+     //add_listeners_delete_buttons()
 
 
 }
@@ -286,7 +291,7 @@ function add_buy_list(arr){
 
   }
 
-
+// not works
 function add_listeners_delete_buttons(){
 for (let i in array_buttons){
   document.getElementById(array_buttons[i]).addEventListener('click',
