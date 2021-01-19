@@ -64,19 +64,36 @@ for(let i in arr2){
 
       additional_list.push([add_list[i].innerHTML, price3[i]])
       add_add_list(additional_list)
+
+
       cart3+=price3[i]
       update()
     }
-    else{
+    if (arr2[i].checked != true){
 
       cart3-=price3[i]
-      
-      additional_list.splice(getLast(additional_list, price3[i]),1)
+
+
+      additional_list.splice(getLast1(additional_list, price3[i]),1)
       add_add_list(additional_list) 
       update()
-    }
-    
+    }   
   })}
+
+
+function getLast1(arr, value){
+  var temparr=[]
+  var max=0
+  arr.forEach(function(item, index, array) {
+  if(item[1]==value){
+  temparr.push(index)}
+  max = getMaxOfArray1(temparr)} )
+  return max
+}
+
+function getMaxOfArray1(numArray) {
+  return Math.max.apply(null, numArray);
+}
 
 
 
@@ -84,9 +101,10 @@ for(let i in arr2){
 
 var addhtml= document.getElementById('additional_list')
 function add_add_list(arr){
-
+  console.log(arr)
   addhtml.innerHTML=''
   for(let i in arr){
+
     addhtml.innerHTML+=`<li>  ${arr[i][0]} ${arr[i][1]} `}
 
 
