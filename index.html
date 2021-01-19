@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Shopping Cart</title>
+	<meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+<h1> Shopping Cart Propotype</h1>
+
+<form>
+    <legend>Товар 1 </legend>
+    <div>
+      
+      <input type="radio" id="size1"
+       name="product1" >
+      <label for="product1">эконом</label>
+      <span class="price">1000</span>
+
+      <input type="radio" id="size2"
+       name="product1" >
+      <label for="product1">стандарт</label>
+      <span class="price">2000</span>
+
+
+      <input type="radio" id="size3"
+       name="product1" >
+      <label for="product1"> комфорт</label>  
+      <span class="price">3000</span>
+
+
+    </div>
+</form>
+<div>
+<button id="opt1_minus">-</button>
+Количество <span id="opt1_total">0</span>
+<button id="opt1_plus">+</button>
+</div>
+
+
+<br>
+
+<form>
+    <legend>Товар 2</legend>
+    <div>
+
+      <input type="radio" id="weight1"
+       name="product2"  >
+      <label for="product2">эконом</label>
+      <span class="price">500</span>
+
+
+
+      <input type="radio" id="weight2"
+       name="product2" >
+      <label for="product2">стандарт</label>
+      <span class="price">700</span>
+
+
+      <input type="radio" id="weight3"
+       name="product2">
+      <label for="product2">комфорт</label>
+      <span class="price">900</span>
+
+    </div>
+</form>
+
+<div>
+<button id="opt2_minus">-</button>
+Количество <span id="opt2_total">0</span>
+<button id="opt2_plus">+</button>
+</div>
+
+<br>
+
+
+<div>дополнительные опции</div>
+<input type="checkbox" id="additional1" name="add1" value="a1">250 <span class="additional">упаковка</span>
+<input type="checkbox" id="additional2" name="add1" value="a2">550 <span class="additional">доставка</span>
+<input type="checkbox" id="additional3" name="add1" value="a3">750 <span class="additional">установка</span>
+
+<br>
+<br>
+
+
+<div id="buy_list" ></div>
+<div id="additional_list" ></div>
+
+
+<div>Total price <span id='amount'>0</span> rub</div>
+
+<script src="script.js"></script>
+</body>
+</html>
